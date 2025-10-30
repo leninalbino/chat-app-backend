@@ -13,8 +13,8 @@ const socketEvents = require('./src/constants/socketEvents');
 const app = express();
 const server = http.createServer(app);
 
-const corsOrigin = process.env.NODE_ENV === 'production' ? 'https://chat-app-v1-beta.vercel.app/' : (process.env.CORS_ORIGIN || "http://localhost:5173");
-console.log('Socket.IO CORS Origin configurado:', corsOrigin);
+const corsOrigin = process.env.NODE_ENV === 'production' ? 'https://chat-app-v1-beta.vercel.app' : (process.env.CORS_ORIGIN || "http://localhost:5173");
+// console.log('Socket.IO CORS Origin configurado:', corsOrigin);
 
 const io = new Server(server, {
   cors: {
