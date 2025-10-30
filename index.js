@@ -14,7 +14,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.CORS_ORIGIN || "http://localhost:5173", // Usar variable de entorno
+    origin: process.env.NODE_ENV === 'production' ? 'https://chat-app-v1-beta.vercel.app/' : (process.env.CORS_ORIGIN || "http://localhost:5173"),
     methods: ["GET", "POST"]
   }
 });
